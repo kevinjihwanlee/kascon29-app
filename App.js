@@ -8,7 +8,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <Image source={require('./background.png')} />
         </View>
-        <View style={styles.container}>
+        <View style={styles.logoContainer}>
 
           <Image source={require('./Logo_gray.png')} style={styles.logo} />
         </View>
@@ -31,4 +31,9 @@ const styles = StyleSheet.create({
     width: 150,
     height: 50,
   },
+  logoContainer: {
+    backgroundColor: 'rgba(0,0,0,0)',
+    position: 'absolute',
+    top: 50,
+  }
 });
