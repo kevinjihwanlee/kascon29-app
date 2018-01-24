@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import SideMenu from 'react-native-side-menu';
 
 export default class App extends React.Component {
   render() {
@@ -8,18 +9,19 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <Image source={require('./background.png')} />
         </View>
-        <View style={styles.logoContainer}>
-
-          <Image source={require('./Logo_gray.png')} style={styles.logo} />
+        <View style={styles.hamburgerContainer}>
+          <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} />
         </View>
-
-
+        <View style={styles.logoContainer}>
+          <Image source={require('./Logo_black.png')} style={styles.logo} />
+        </View>
       </View>
-
     );
   }
-}
+} 
 
+
+// check graphics dimensions
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -28,12 +30,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    width: 150,
-    height: 50,
+    width: 550,
+    height: 80,
   },
   logoContainer: {
-    backgroundColor: 'rgba(0,0,0,0)',
     position: 'absolute',
-    top: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: '25%',
+  },
+  hamburgerContainer: {
+    position: 'absolute',
+    top: '4%',
+    left: '4%',
+  },
+  hamburger: {
+    width: 35,
+    height: 35,
   }
 });
