@@ -1,107 +1,98 @@
 import React from 'react';
-import { StyleSheet, Text, Button, Platform, ScrollView, StatusBar, View, Image} from 'react-native';
+import { StyleSheet, Text, Button, Platform, ScrollView, StatusBar, View, Image, TouchableHighlight} from 'react-native';
 import { DrawerNavigator, SafeAreaView } from 'react-navigation';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+
 const MyNavScreen = ({ navigation, banner }) => (
   <View style={styles.container}>
-  <View style={styles.container}>
-    <Image source={require('./background.png')} />
-  </View>
-  <ScrollView>
-    <SafeAreaView forceInset={{ top: 'always' }}>
-      <Text>{banner}</Text>
-      <Button
-        onPress={() => navigation.navigate('DrawerOpen')}
-        title="Open drawer"
-      />
-    </SafeAreaView>
-    <StatusBar barStyle="default" />
-  </ScrollView>
+    <View style={styles.container}>
+      <Image source={require('./background.png')} />
+    </View>
+    <View style={styles.hamburgerContainer}>
+      <TouchableHighlight onPress={() => navigation.navigate('DrawerOpen')}>
+      <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} onPress ={() => navigation.navigate('DrawerOpen')}/>
+      </TouchableHighlight>
+     </View>
+     <View style={styles.logoContainer}>
+       <Image source={require('./Logo_black.png')} style={styles.logo} />
+   </View>
   </View>
 );
 
-const InboxScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Inbox Screen'} navigation={navigation} />
+const RegistrationScreen = ({ navigation }) => (
+  <MyNavScreen banner={'Registration Screen'} navigation={navigation} />
 );
-InboxScreen.navigationOptions = {
-  drawerLabel: 'Inbox',
-  // drawerIcon: ({ tintColor }) => (
-  //   <MaterialIcons
-  //     name="move-to-inbox"
-  //     size={24}
-  //     style={{ color: tintColor }}
-  //   />
-  // ),
+RegistrationScreen.navigationOptions = {
+  drawerLabel: 'Registration',
 };
 
-const DraftsScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Drafts Screen'} navigation={navigation} />
+const ScheduleScreen = ({ navigation }) => (
+  <MyNavScreen banner={'Schedule Screen'} navigation={navigation} />
 );
-DraftsScreen.navigationOptions = {
-  drawerLabel: 'Drafts',
-  // drawerIcon: ({ tintColor }) => (
-  //   <MaterialIcons name="drafts" size={24} style={{ color: tintColor }} />
-  // ),
+ScheduleScreen.navigationOptions = {
+  drawerLabel: 'Schedule',
 };
+
+const SpeakersScreen = ({ navigation }) => (
+  <MyNavScreen banner={'Speakers Screen'} navigation={navigation} />
+);
+ScheduleScreen.navigationOptions = {
+  drawerLabel: 'Speakers',
+};
+
+const SponsorsScreen = ({ navigation }) => (
+  <MyNavScreen banner={'Sponsors Screen'} navigation={navigation} />
+);
+ScheduleScreen.navigationOptions = {
+  drawerLabel: 'Sponsors',
+};
+
 
 const DrawerExample = DrawerNavigator(
   {
-    Inbox: {
+    Registration: {
       path: '/',
-      screen: InboxScreen,
+      screen: RegistrationScreen,
     },
-    Drafts: {
+    Schedule: {
       path: '/sent',
-      screen: DraftsScreen,
+      screen: ScheduleScreen,
     },
+    Speakers: {
+      path: '/',
+      screen: SpeakersScreen,
+    },
+    Sponsors: {
+      path: '/',
+      screen: SponsorsScreen,
+    }
   },
   {
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
-    initialRouteName: 'Drafts',
+    initialRouteName: 'Registration',
     contentOptions: {
-      activeTintColor: '#e91e63',
+      activeTintColor: '#654EA3',
     },
   }
 );
 
 export default DrawerExample;
 
-// import React from 'react';
-// import { StyleSheet, Text, View, Image } from 'react-native';
-// import SideMenu from 'react-native-side-menu';
-
-// export default class App extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <View style={styles.container}>
-//           <Image source={require('./background.png')} />
-//         </View>
-//         <View style={styles.hamburgerContainer}>
-//           <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} />
-//         </View>
-//         <View style={styles.logoContainer}>
-//           <Image source={require('./Logo_black.png')} style={styles.logo} />
-//         </View>
-//       </View>
-//     );
-//   }
-// } 
-
 
 // check graphics dimensions
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    top: '5%',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   logo: {
-    width: 550,
+    width: 575,
     height: 80,
   },
   logoContainer: {
@@ -112,11 +103,11 @@ const styles = StyleSheet.create({
   },
   hamburgerContainer: {
     position: 'absolute',
-    top: '4%',
+    top: '1%',
     left: '4%',
   },
   hamburger: {
-    width: 35,
-    height: 35,
+    width: 40,
+    height: 40,
   }
 });
