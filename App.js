@@ -4,7 +4,7 @@ import { DrawerNavigator, SafeAreaView } from 'react-navigation';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
-const MyNavScreen = ({ navigation, banner }) => (
+const HomeScreen = ({ navigation, banner }) => (
   <View style={styles.container}>
     <View style={styles.container}>
       <Image source={require('./background.png')} />
@@ -21,36 +21,77 @@ const MyNavScreen = ({ navigation, banner }) => (
 );
 
 const RegistrationScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Registration Screen'} navigation={navigation} />
+  <HomeScreen banner={'Registration Screen'} navigation={navigation} />
 );
 RegistrationScreen.navigationOptions = {
   drawerLabel: 'Registration',
 };
 
-const ScheduleScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Schedule Screen'} navigation={navigation} />
+const ScheduleScreen = ({ navigation, banner }) => (
+  <View style={styles.container}>
+    <View style={styles.hamburgerContainer}>
+      <TouchableHighlight onPress={() => navigation.navigate('DrawerOpen')}>
+        <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} onPress ={() => navigation.navigate('DrawerOpen')}/>
+      </TouchableHighlight>
+    </View>
+  <ScrollView contentContainerStyle={styles.container}>
+    <Text style={styles.titleText}>
+    'Schedule'
+    </Text>
+    <Image
+      source={{uri: 'http://www.gregscott.com/pano/vpano/20100516_1458_100_5183_web.jpg'}}
+      style={styles.image}
+    />
+    <Text>
+      'texttexttexttexttext text yay whoopdidoo what'
+    </Text>
+    <View style={styles.topBar}/>
+  </ScrollView>
+</View>
 );
 ScheduleScreen.navigationOptions = {
   drawerLabel: 'Schedule',
 };
 
 const SpeakersScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Speakers Screen'} navigation={navigation} />
+  <View style={styles.container}>
+    <View style={styles.hamburgerContainer}>
+      <TouchableHighlight onPress={() => navigation.navigate('DrawerOpen')}>
+        <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} onPress ={() => navigation.navigate('DrawerOpen')}/>
+      </TouchableHighlight>
+    </View>
+  {/* <ScrollView contentContainerStyle={styles.container}> */}
+  {/* <View style = {styles.container}> */}
+    <Text style={styles.titleText}>
+    Speakers
+    </Text>
+    <View style={styles.speakerContainer}>
+      <Text style={styles.speakerText}>
+      blah
+      </Text>
+    </View>
+    {/* </View> */}
+  {/* </ScrollView> */}
+</View>
 );
-ScheduleScreen.navigationOptions = {
+SpeakersScreen.navigationOptions = {
   drawerLabel: 'Speakers',
 };
 
 const SponsorsScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Sponsors Screen'} navigation={navigation} />
+  <HomeScreen banner={'Sponsors Screen'} navigation={navigation} />
 );
-ScheduleScreen.navigationOptions = {
+SponsorsScreen.navigationOptions = {
   drawerLabel: 'Sponsors',
 };
 
 
-const DrawerExample = DrawerNavigator(
+const Drawer = DrawerNavigator(
   {
+    Home: {
+      path: '/',
+      screen: HomeScreen,
+    },
     Registration: {
       path: '/',
       screen: RegistrationScreen,
@@ -79,7 +120,7 @@ const DrawerExample = DrawerNavigator(
   }
 );
 
-export default DrawerExample;
+export default Drawer;
 
 
 // check graphics dimensions
@@ -90,6 +131,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  baseText: {
+    fontFamily: 'Avenir',
+  },
+  titleText: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: '5%',
+  },
+  speakerText: {
+    fontSize: 15,
+    position: 'absolute',
+  },
+  speakerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 2,
+    borderWidth: 0.5,
+    borderColor: '#fff',
   },
   logo: {
     width: 575,
@@ -109,5 +172,9 @@ const styles = StyleSheet.create({
   hamburger: {
     width: 40,
     height: 40,
+  },
+  image: {
+    width: 100,
+    height: 100,
   }
 });
