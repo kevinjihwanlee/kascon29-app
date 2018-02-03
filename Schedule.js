@@ -1,29 +1,16 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, Button, Platform, ScrollView, StatusBar, View, Image, TouchableHighlight} from 'react-native';
-import { DrawerNavigator, SafeAreaView } from 'react-navigation';
-import { AppRegistry, Text, TextInput, View } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { Image, ScrollView, Text } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 
-const MyNavScreen = ({ navigation, banner }) => (
-  <View style={styles.container}>
-    <View style={styles.hamburgerContainer}>
-      <TouchableHighlight onPress={() => navigation.navigate('DrawerOpen')}>
-        <Image
-          source={require('./Hamburger_icon.png')}
-          style={styles.hamburger}
-          onPress ={() => navigation.navigate('DrawerOpen')}
-        />
-      </TouchableHighlight>
-    </View>
-  </View>
-);
-
-class ScheduleScreen extends Component {
+export default class ScheduleScreen extends React.Component {
   render() {
     return (
-      <View style={this.props.style}>
-        <ScrollView contentContainerStyle={styles.container}
+      <View style={styles.container}>
+        <View style={styles.hamburgerContainer}>
+          <TouchableHighlight onPress={() => navigation.navigate('DrawerOpen')}>
+            <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} onPress ={() => navigation.navigate('DrawerOpen')}/>
+          </TouchableHighlight>
+        </View>
+        <ScrollView contentContainerStyle={styles.container}>
           <Text style={styles.titleText}>
           'Schedule'
           </Text>
@@ -34,12 +21,9 @@ class ScheduleScreen extends Component {
           <Text>
             'texttexttexttexttext text yay whoopdidoo what'
           </Text>
-
           <View style={styles.topBar}/>
-          </View>
         </ScrollView>
       </View>
-
     );
   }
 }
@@ -69,7 +53,8 @@ const styles = StyleSheet.create({
     height: 40,
   },
   image: {
-    width: 100%,
-    height:auto
+    width: '100%',
+    height: '100%',
   }
 });
+
