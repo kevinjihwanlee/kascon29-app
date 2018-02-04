@@ -1,24 +1,58 @@
-import React from 'react';
-import { StyleSheet, Text, Button, Platform, ScrollView, StatusBar, View, Image, TouchableHighlight} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, Button, Platform, ScrollView, StatusBar, View, Image, TouchableOpacity } from 'react-native';
 import { DrawerNavigator, SafeAreaView } from 'react-navigation';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+// const HomeScreen = ({ navigation, banner }) => (
+//   <View style={styles.container}>
+//     <View style={styles.container}>
+//       <Image source={require('./background.png')} />
+//     </View>
+//     <View style={styles.hamburgerContainer}>
+//       <TouchableHighlight onPress={() => navigation.navigate('DrawerOpen')}>
+//       <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} onPress ={() => navigation.navigate('DrawerOpen')}/>
+//       </TouchableHighlight>
+//       <Hamburger active={this.state.active}
+//         type="cross"
+//         onPress={()=> this.setState({active: !this.state.active})} />
+//      </View>
+//      <View style={styles.logoContainer}>
+//        <Image source={require('./Logo_black.png')} style={styles.logo} />
+//    </View>
+//   </View>
+// );
 
-const HomeScreen = ({ navigation, banner }) => (
-  <View style={styles.container}>
+class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active:false
+    }
+  }
+
+  navigationTest() {
+    this.setState({active: !this.state.active});
+    this.props.navigation.navigate('DrawerOpen');
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
     <View style={styles.container}>
       <Image source={require('./background.png')} />
     </View>
     <View style={styles.hamburgerContainer}>
-      <TouchableHighlight onPress={() => navigation.navigate('DrawerOpen')}>
-      <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} onPress ={() => navigation.navigate('DrawerOpen')}/>
-      </TouchableHighlight>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('DrawerOpen')}>
+      <Image source={require('./Hamburger_icon.png')} style={styles.hamburger} onPress ={() => this.props.navigation.navigate('DrawerOpen')}/>
+      </TouchableOpacity>
      </View>
      <View style={styles.logoContainer}>
        <Image source={require('./Logo_black.png')} style={styles.logo} />
    </View>
   </View>
-);
+    )
+  }
+}
 
 const RegistrationScreen = ({ navigation }) => (
   <HomeScreen banner={'Registration Screen'} navigation={navigation} />
