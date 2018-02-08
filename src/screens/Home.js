@@ -6,7 +6,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.container}>
-                <Image source={require('../img/background.png')} />
+                <Image source={require('../img/skyline_pat.png')} />
             </View>
             <View style={styles.hamburgerContainer}>
                 <TouchableOpacity onPress={() => navigation.navigate('DrawerOpen')}>

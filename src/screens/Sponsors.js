@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
 
-const ScheduleScreen = ({ navigation }) => {
+const SponsorsScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <Image source={require('../img/banner.png')}  style = {styles.bannerContainer} />
@@ -11,25 +11,15 @@ const ScheduleScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <Text style={styles.titleText}>
-          Schedule
+          Sponsors
         </Text>
         {/* put your own code after this */}
-        <ScrollView contentContainerStyle={styles.container}>
-          
-          <Image
-            source={{uri: 'http://www.gregscott.com/pano/vpano/20100516_1458_100_5183_web.jpg'}}
-            style={styles.image}
-          />
-          <Text>
-            'texttexttexttexttext text yay whoopdidoo what'
-          </Text>
-          <View style={styles.topBar}/>
-        </ScrollView>
       </View>
   )
 }
 
-export default ScheduleScreen;
+// avenir
+export default SponsorsScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -41,9 +31,9 @@ const styles = StyleSheet.create({
   },
   bannerContainer: {
     resizeMode: 'contain',
-      position: 'absolute',
-      top: '-45%',
-      width: 390,
+    position: 'absolute',
+    top: '-45%',
+    width: 390,
   },
   baseText: {
     fontFamily: 'Avenir',
