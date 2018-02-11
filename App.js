@@ -6,6 +6,7 @@ import RegistrationScreen from './src/screens/Registration'
 import SpeakersScreen from './src/screens/Speakers'
 import ScheduleScreen from './src/screens/Schedule'
 import SponsorsScreen from './src/screens/Sponsors'
+import SideMenu from './src/SideMenu'
 
 const RootStack = DrawerNavigator(
   {
@@ -30,6 +31,7 @@ const RootStack = DrawerNavigator(
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
+    contentComponent: SideMenu,
     contentOptions: {
       activeTintColor: '#654EA3',
     }
