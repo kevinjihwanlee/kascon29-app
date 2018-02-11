@@ -1,14 +1,9 @@
 # kascon29-app
 
-## skeleton:
-    * background and conference logo
-    * button top left corner (for sidemenu)
-    * sidemenu with:
-        * Registration
-        * Speakers
-        * Schedule
-        * Sponsors
-        (for now)
+## to-do:
+    * fix the banner
+    * fix the side menu so that it actually navigates
+    * look into the process of uploading to play store and app store
 
 :sparkles:
 
