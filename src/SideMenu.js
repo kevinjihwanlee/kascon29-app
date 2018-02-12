@@ -1,37 +1,30 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
-import {NavigationActions} from 'react-navigation';
-import {StyleSheet, ScrollView, Text, View, Image} from 'react-native';
+import React, { Component } from 'react';
+import { DrawerNavigation, NavigationActions } from 'react-navigation';
+import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
-class SideMenu extends Component {
-  navigateToScreen = (route) => () => {
-    const navigateAction = NavigationActions.navigate({
-      routeName: route
-    });
-    this.props.navigation.dispatch(navigateAction);
-  }
-  render () {
-    return (
-      <View style={styles.container}>
+const SideMenu = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
             {/* <View style={styles.logoContainer}> */}
             <View style = {styles.logoContainer}>
                 <Image source={require('../src/img/Logo_PurpleBlackLetters_Small.png')} style={styles.logo} />
                 <Text style = {styles.dimensions}> DIMENSIONS </Text>
             </View>
           <View>
-            <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('HomeScreen')}>
+            <Text style={styles.sectionHeadingStyle} onPress={() => navigation.navigate('Home')}>
               Home
             </Text>
-            <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('RegistrationScreen')}>
+            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Registration')}>
               Registration
             </Text>
-            <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('SpeakersScreen')}>
+            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Speakers')}>
               Speakers
             </Text>
-            <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('ScheduleScreen')}>
+            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Schedule')}>
               Schedule
             </Text>
-            <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('SponsorsScreen')}>
+            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Sponsors')}>
               Sponsors
             </Text>
           </View>
@@ -41,9 +34,51 @@ class SideMenu extends Component {
           </Text>
         </View>
       </View>
-    );
-  }
+  )
 }
+
+// class SideMenu extends Component {
+//   navigateToScreen = (route) => () => {
+//     const navigateAction = NavigationActions.navigate({
+//       routeName: route
+//     });
+//     // this.props.navigation.dispatch(navigateAction);
+//     this.props.navigation.goBack();
+//   }
+//   render () {
+//     return (
+//       <View style={styles.container}>
+//             {/* <View style={styles.logoContainer}> */}
+//             <View style = {styles.logoContainer}>
+//                 <Image source={require('../src/img/Logo_PurpleBlackLetters_Small.png')} style={styles.logo} />
+//                 <Text style = {styles.dimensions}> DIMENSIONS </Text>
+//             </View>
+//           <View>
+//             <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('HomeScreen')}>
+//               Home
+//             </Text>
+//             <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('RegistrationScreen')}>
+//               Registration
+//             </Text>
+//             <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('SpeakersScreen')}>
+//               Speakers
+//             </Text>
+//             <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('ScheduleScreen')}>
+//               Schedule
+//             </Text>
+//             <Text style={styles.sectionHeadingStyle}onPress={this.navigateToScreen('SponsorsScreen')}>
+//               Sponsors
+//             </Text>
+//           </View>
+//         <View style={styles.footerContainer}>
+//           <Text style = {styles.footerText}>Thank you for coming to KASCON29: Dimensions! Please use 
+//               this app for funsies :)
+//           </Text>
+//         </View>
+//       </View>
+//     );
+//   }
+// }
 
 const styles = StyleSheet.create({
     container: {

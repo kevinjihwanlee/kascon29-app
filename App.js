@@ -32,9 +32,9 @@ const RootStack = DrawerNavigator(
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
     contentComponent: SideMenu,
-    contentOptions: {
-      activeTintColor: '#654EA3',
-    }
+    // contentOptions: {
+    //   activeTintColor: '#654EA3',
+    // }
   },
 );
 
