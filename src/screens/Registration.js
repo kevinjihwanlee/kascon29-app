@@ -14,7 +14,6 @@ const RegistrationScreen = ({ navigation }) => {
       <Text style={styles.titleText}>
         Registration
       </Text>
-      {/* put your own code after this */}
     </View>
   )
 }
