@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { DrawerNavigator, SafeAreaView } from 'react-navigation';
 
 const RegistrationScreen = ({ navigation }) => {
@@ -15,50 +15,49 @@ const RegistrationScreen = ({ navigation }) => {
         Registration
       </Text>
       {/* put your own code after this */}
-        <Text style={styles.bodyText}>
-        'Click the link below to register for KASCON 29 through Eventbrite. Please keep in mind that prices will vary depending on their respective registration cycles, which are listed below.'
-        </Text>
     </View>
   )
 }
 
 export default RegistrationScreen;
 
+const dimensions = Dimensions.get('window');
+const imageHeight = Math.round(dimensions.width * 6 / 16);
+
+// check graphics dimensions
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    top: '5%',
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  bannerContainer: {
-    resizeMode: 'contain',
-      position: 'absolute',
-      top: '-45%',
-      width: 390,
-  },
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+    },
+    bannerContainer: {
+      resizeMode: 'cover',
+      top: 0,
+      width: '110%',
+      height: imageHeight - 20,
+    },
   baseText: {
     fontFamily: 'Avenir',
   },
   titleText: {
-    fontSize: 40,
+    fontSize: 35,
     color: 'white',
-    fontFamily: 'Avenir',
     backgroundColor: 'rgba(52, 52, 52, 0)',
     fontWeight: 'bold',
+    fontFamily: 'Avenir',
     position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
-    top: '5%',
+    top: '6.5%',
   },
   hamburgerContainer: {
     position: 'absolute',
-    top: '1%',
+    top: '7%',
     left: '4%',
   },
   hamburger: {
-    width: 40,
-    height: 40,
+    width: 38,
+    height: 38,
   }
 });

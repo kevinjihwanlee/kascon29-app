@@ -6,7 +6,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.container}>
-                <Image source={require('../img/skyline_pat.png')} />
+                <Image source={require('../img/skyline_pat.png')} style={styles.background} />
             </View>
             <View style={styles.hamburgerContainer}>
                 <TouchableOpacity onPress={() => navigation.navigate('DrawerOpen')}>
@@ -23,24 +23,26 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        top: '5%',
         backgroundColor: '#fff',
         alignItems: 'center',
+    },
+    background: {
+        bottom: '25%',
         justifyContent: 'center',
     },
     logo: {
-        width: 575,
+        width: 565,
         height: 80,
     },
     logoContainer: {
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        top: '25%',
+        top: '30%',
     },
     hamburgerContainer: {
         position: 'absolute',
-        top: '1%',
+        top: '7%',
         left: '4%',
     },
     hamburger: {

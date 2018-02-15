@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { DrawerNavigation } from 'react-navigation';
 
 
@@ -15,42 +15,33 @@ const SpeakersScreen = ({ navigation }) => {
       <Text style={styles.titleText}>
         Speakers
       </Text>
-        {/* put your own code after this */}
-    {/* <View style = {styles.container}> 
-      <View style={styles.speakerContainer}>
-        <Text style = {styles.speakerText}>
-          Jin Ha
-        </Text>
-        <Image source={require('./jin_ha.jpeg')}/>
-      </View>
-    </View> */}
-  {/* </ScrollView> */}
     </View>
     )
 }
 
 export default SpeakersScreen;
 
+const dimensions = Dimensions.get('window');
+const imageHeight = Math.round(dimensions.width * 6 / 16);
+
 // check graphics dimensions
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      top: '5%',
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center',
     },
     bannerContainer: {
-      resizeMode: 'contain',
-      position: 'absolute',
-      top: '-45%',
-      width: 390,
+      resizeMode: 'cover',
+      top: 0,
+      width: '110%',
+      height: imageHeight - 20,
     },
     baseText: {
       fontFamily: 'Avenir',
     },
     titleText: {
-      fontSize: 40,
+      fontSize: 35,
       color: 'white',
       backgroundColor: 'rgba(52, 52, 52, 0)',
       fontWeight: 'bold',
@@ -58,19 +49,8 @@ const styles = StyleSheet.create({
       position: 'absolute',
       justifyContent: 'center',
       alignItems: 'center',
-      top: '5%',
+      top: '6.5%',
     },
-    // old version without view beneath
-    // titleText: {
-    //   fontSize: 40,
-    //   color: 'white',
-    //   backgroundColor: 'rgba(52, 52, 52, 0)',
-    //   fontWeight: 'bold',
-    //   position: 'absolute',
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   top: '5%',
-    // },
     speakerText: {
       fontSize: 35,
     },
@@ -95,12 +75,12 @@ const styles = StyleSheet.create({
     },
     hamburgerContainer: {
       position: 'absolute',
-      top: '1%',
+      top: '7%',
       left: '4%',
     },
     hamburger: {
-      width: 40,
-      height: 40,
+      width: 38,
+      height: 38,
     },
     image: {
       width: 100,

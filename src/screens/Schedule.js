@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Dimensions } from 'react-native';
 
 const ScheduleScreen = ({ navigation }) => {
     return (
@@ -14,59 +14,50 @@ const ScheduleScreen = ({ navigation }) => {
           Schedule
         </Text>
         {/* put your own code after this */}
-        <ScrollView contentContainerStyle={styles.container}>
-          
-          <Image
-            source={{uri: 'http://www.gregscott.com/pano/vpano/20100516_1458_100_5183_web.jpg'}}
-            style={styles.image}
-          />
-          <Text>
-            'texttexttexttexttext text yay whoopdidoo what'
-          </Text>
-          <View style={styles.topBar}/>
-        </ScrollView>
       </View>
   )
 }
 
 export default ScheduleScreen;
 
+const dimensions = Dimensions.get('window');
+const imageHeight = Math.round(dimensions.width * 6 / 16);
+
+// check graphics dimensions
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    top: '5%',
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  bannerContainer: {
-    resizeMode: 'contain',
-      position: 'absolute',
-      top: '-45%',
-      width: 390,
-  },
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+    },
+    bannerContainer: {
+      resizeMode: 'cover',
+      top: 0,
+      width: '110%',
+      height: imageHeight - 20,
+    },
   baseText: {
     fontFamily: 'Avenir',
   },
   titleText: {
-    fontSize: 40,
+    fontSize: 35,
     color: 'white',
     backgroundColor: 'rgba(52, 52, 52, 0)',
     fontWeight: 'bold',
-    position: 'absolute',
     fontFamily: 'Avenir',
+    position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
-    top: '5%',
+    top: '6.5%',
   },
   hamburgerContainer: {
     position: 'absolute',
-    top: '1%',
+    top: '7%',
     left: '4%',
   },
   hamburger: {
-    width: 40,
-    height: 40,
+    width: 38,
+    height: 38,
   },
   image: {
     width: '100%',
