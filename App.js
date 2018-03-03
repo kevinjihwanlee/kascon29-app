@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import HomeScreen from './src/screens/Home'
-import RegistrationScreen from './src/screens/Registration'
+import AboutScreen from './src/screens/About'
 import SpeakersScreen from './src/screens/Speakers'
 import ScheduleScreen from './src/screens/Schedule'
 import SponsorsScreen from './src/screens/Sponsors'
@@ -13,8 +13,8 @@ const RootStack = DrawerNavigator(
     Home: {
       screen: HomeScreen,
     },
-    Registration: {
-      screen: RegistrationScreen,
+    About: {
+      screen: AboutScreen,
     },
     Speakers: {
       screen: SpeakersScreen

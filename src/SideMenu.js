@@ -15,8 +15,8 @@ const SideMenu = ({ navigation }) => {
             <Text style={styles.sectionHeadingStyle} onPress={() => navigation.navigate('Home')}>
               Home
             </Text>
-            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Registration')}>
-              Registration
+            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('About')}>
+              About
             </Text>
             <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Speakers')}>
               Speakers
@@ -29,7 +29,7 @@ const SideMenu = ({ navigation }) => {
             </Text>
           </View>
         <View style={styles.footerContainer}>
-          <Text style = {styles.footerText}>Thank you for coming to KASCON29: Dimensions! Please use 
+          <Text style = {styles.footerText}>Thank you for coming to KASCON29: Dimensions! Please use
               this app for funsies :)
           </Text>
         </View>
