@@ -24,6 +24,9 @@ const SideMenu = ({ navigation }) => {
             <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Schedule')}>
               Schedule
             </Text>
+            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Board')}>
+              Meet the Board
+            </Text>
             <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Sponsors')}>
               Sponsors
             </Text>
