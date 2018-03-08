@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import { DrawerNavigator, SafeAreaView } from 'react-navigation';
 
 const AboutScreen = ({ navigation }) => {
@@ -14,7 +14,7 @@ const AboutScreen = ({ navigation }) => {
       <Text style={styles.titleText}>
         About
       </Text>
-      <View style={styles.textContainer}>
+      <ScrollView contentContainerStyle={styles.textContainer}>
         <Text style={styles.insidetitleText}>
           About KASCON
         </Text>
@@ -27,13 +27,13 @@ const AboutScreen = ({ navigation }) => {
         <Text style={styles.insideText}>
           Founded in 1991, the Mirae Foundation is an independent, 501(c)3 not-for-profit organization that devotes 100% of its resources to endeavors such as KASCON in order to foster leadership in new generations of the Korean American community. The Foundation serves as a permanent advisory body to KASCON, linking past and current organizers, speakers, and supporters.
         </Text>
-        <Text style={styles.insideTitleText}>
+        <Text style={styles.insidetitleText}>
           Dimensions
         </Text>
         <Text style={styles.insideText}>
           The theme of this year’s conference will be Dimensions, which aims to spotlight the multiple facets that make up our Korean American identities. Dimensions describes our combined struggles to find balance between our “Koreanness” and our “Americanness,” showing how two irreconcilable extremes are actually more integrated than we realize. Acknowledging that our identities are neither singularly Korean nor American is central to the vision of KASCON 29: Dimensions.
         </Text>
-      </View>
+      </ScrollView>
     </View>
   )
 }
