@@ -15,8 +15,13 @@ const SpeakersScreen = ({ navigation }) => {
       <Text style={styles.titleText}>
         Speakers
       </Text>
+      <View style={styles.Jin_Ha}>
+          <Image source={require('../img/Jin_Ha.jpg')} style={styles.Jin_Ha} />
+      </View>
     </View>
     )
+
+
 }
 
 export default SpeakersScreen;
@@ -29,6 +34,12 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
+      alignItems: 'center',
+    },
+    Jin_Ha: {
+      top: '10%',
+      width: '95%',
+      height: '65%',
       alignItems: 'center',
     },
     bannerContainer: {
@@ -87,5 +98,3 @@ const styles = StyleSheet.create({
       height: 100,
     }
   });
-  
-  
