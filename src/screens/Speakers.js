@@ -15,9 +15,38 @@ const SpeakersScreen = ({ navigation }) => {
       <Text style={styles.titleText}>
         Speakers
       </Text>
-      <View style={styles.Jin_Ha}>
+      <ScrollView contentContainerStyle={styles.textContainer}>
+        <Text style={styles.insidetitleText}>
+          Opening Speaker
+        </Text>
+        <View style={styles.speakerContainer}>
           <Image source={require('../img/Jin_Ha.jpg')} style={styles.Jin_Ha} />
-      </View>
+        </View>
+        <Text style={styles.insidetitleText}>
+          Korean Americans in Journalism
+        </Text>
+        <Text style={styles.insidetitleText}>
+          Korean Americans in Academia
+        </Text>
+        <View style={styles.speakerContainer}>
+          <Image source={require('../img/Jin_Ha.jpg')} style={styles.Jin_Ha} />
+        </View>
+        <Text style={styles.insidetitleText}>
+          Korean Americans in Fashion
+        </Text>
+        <Text style={styles.insidetitleText}>
+          Korean Americans in Law
+        </Text>
+        <Text style={styles.insidetitleText}>
+          Korean Americans in Entrepreneurship
+        </Text>
+        <Text style={styles.insidetitleText}>
+          Korean Americans in Women
+        </Text>
+        <Text style={styles.insidetitleText}>
+          Closing Speaker
+        </Text>
+      </ScrollView>
     </View>
     )
 
@@ -37,10 +66,17 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     Jin_Ha: {
-      top: '10%',
+      //top: '10%',
+      resizeMode: 'cover',
       width: '95%',
       height: '65%',
       alignItems: 'center',
+      //justifyContent: 'center',
+    },
+    textContainer: {
+      alignItems: 'flex-start',
+      marginLeft: 15,
+      marginRight: 15,
     },
     bannerContainer: {
       resizeMode: 'cover',
@@ -62,17 +98,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       top: '6.5%',
     },
-    speakerText: {
-      fontSize: 35,
+    insidetitleText: {
+      fontSize: 25,
+      fontFamily: 'Avenir',
+      fontWeight: 'bold',
+      alignItems: 'flex-start',
+      marginTop: 15,
     },
     speakerContainer: {
-      justifyContent: 'center',
-      position: 'absolute',
-      top: 20,
       alignItems: 'center',
-      borderRadius: 2,
-      borderWidth: 0.5,
-      borderColor: '#fff',
     },
     logo: {
       width: 575,

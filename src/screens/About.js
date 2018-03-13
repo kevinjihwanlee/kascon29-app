@@ -72,19 +72,22 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     alignItems: 'flex-start',
-    margin: 15,
+    marginLeft: 15,
+    marginRight: 15,
   },
   insidetitleText: {
-    fontSize: 20,
+    fontSize: 25,
     fontFamily: 'Avenir',
     fontWeight: 'bold',
     alignItems: 'flex-start',
     marginTop: 15,
   },
   insideText: {
-    fontSize: 15,
+    fontSize: 18,
     fontFamily: 'Avenir',
     fontWeight: 'normal',
+    paddingTop: 10,
+    paddingBottom: 15,
   },
   hamburgerContainer: {
     position: 'absolute',
