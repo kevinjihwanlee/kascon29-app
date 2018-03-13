@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import { DrawerNavigator, SafeAreaView } from 'react-navigation';
 
 const BoardScreen = ({ navigation }) => {
@@ -14,6 +14,14 @@ const BoardScreen = ({ navigation }) => {
       <Text style={styles.titleText}>
         Meet the Board
       </Text>
+      <ScrollView contentContainerStyle={styles.textContainer}>
+        <Text style={styles.insidetitleText}>
+          Meet the Board of KASCON 2018
+        </Text>
+        <Text style={styles.insideText}>
+        text about board of kascon etc blablablabla cool what haha
+        </Text>
+      </ScrollView>
     </View>
   )
 }
@@ -49,6 +57,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     top: '6.5%',
+  },
+  textContainer: {
+    alignItems: 'flex-start',
+    marginLeft: 15,
+    marginRight: 15,
+
+  },
+  insidetitleText: {
+    fontSize: 20,
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    alignItems: 'flex-start',
+    marginTop: 15,
+  },
+  insideText: {
+    fontSize: 18,
+    fontFamily: 'Avenir',
+    fontWeight: 'normal',
+    paddingTop: 10,
+    paddingBottom: 15,
+  },
+  boardImage: {
+    width: 150,
+    height: 150,
+    marginTop: 15,
   },
   hamburgerContainer: {
     position: 'absolute',
