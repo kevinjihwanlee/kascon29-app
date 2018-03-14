@@ -27,7 +27,7 @@ const imageHeight = Math.round(dimensions.width * 6 / 16);
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#240A40',
       alignItems: 'center',
     },
     bannerContainer: {
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
-    top: '6.5%',
+    top: '7%',
   },
   hamburgerContainer: {
     position: 'absolute',

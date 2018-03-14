@@ -14,6 +14,20 @@ const SponsorsScreen = ({ navigation }) => {
           Sponsors
         </Text>
         {/* put your own code after this */}
+        <ScrollView contentContainerStyle={styles.textContainer}>
+          <Text style={styles.insidetitleText}>
+            GOLD
+          </Text>
+          <Text style={styles.insidetitleText}>
+            SILVER
+          </Text>
+          <Text style={styles.insidetitleText}>
+            BRONZE
+          </Text>
+          <Text style={styles.insidetitleText}>
+            EXECUTIVE
+          </Text>
+      </ScrollView>
       </View>
   )
 }
@@ -26,17 +40,17 @@ const imageHeight = Math.round(dimensions.width * 6 / 16);
 
 // check graphics dimensions
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-    },
-    bannerContainer: {
-      resizeMode: 'cover',
-      top: 0,
-      width: '110%',
-      height: imageHeight - 20,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#240A40',
+    alignItems: 'center',
+  },
+  bannerContainer: {
+    resizeMode: 'cover',
+    top: 0,
+    width: '110%',
+    height: imageHeight - 20,
+  },
   baseText: {
     fontFamily: 'Avenir',
   },
@@ -51,6 +65,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     top: '6.5%',
   },
+  textContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  insidetitleText: {
+    fontSize: 30,
+    margin: 15,
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+    color: '#EEEEEE',
+  },
+  insideText: {
+    fontSize: 18,
+    fontFamily: 'Avenir',
+    fontWeight: 'normal',
+    color: 'white',
+  },
   hamburgerContainer: {
     position: 'absolute',
     top: '7%',
@@ -59,10 +93,7 @@ const styles = StyleSheet.create({
   hamburger: {
     width: 38,
     height: 38,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
   }
 });
+
 

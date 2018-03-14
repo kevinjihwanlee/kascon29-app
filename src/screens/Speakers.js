@@ -62,7 +62,7 @@ const imageHeight = Math.round(dimensions.width * 6 / 16);
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#240A40',
       alignItems: 'center',
     },
     Jin_Ha: {
