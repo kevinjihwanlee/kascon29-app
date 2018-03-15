@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0"
+    "sdkVersion": "23.0.0",
+    "name": "KASCON29: Dimensions Conference App",
+    "icon": "./src/img/icon.png",
+    "version": "1.0.0",
+    "slug": "kascon29-app",
+    "ios": {
+      "bundleIdentifier": "org.reactjs.native.example.kascon29-app"
+    },
+    "android": {
+      "package": "com.reactjs.native.example.kascon29-app"
+    }
   }
 }

@@ -5,6 +5,7 @@ import HomeScreen from './src/screens/Home'
 import AboutScreen from './src/screens/About'
 import SpeakersScreen from './src/screens/Speakers'
 import ScheduleScreen from './src/screens/Schedule'
+import MapsScreen from './src/screens/Maps'
 import BoardScreen from './src/screens/Board'
 import SponsorsScreen from './src/screens/Sponsors'
 import SideMenu from './src/SideMenu'
@@ -22,6 +23,9 @@ const RootStack = DrawerNavigator(
     },
     Schedule: {
       screen: ScheduleScreen,
+    },
+    Maps: {
+      screen: MapsScreen,
     },
     Board: {
       screen: BoardScreen,

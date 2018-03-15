@@ -6,7 +6,6 @@ import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 const SideMenu = ({ navigation }) => {
   return (
     <View style={styles.container}>
-            {/* <View style={styles.logoContainer}> */}
             <View style = {styles.logoContainer}>
                 <Image source={require('../src/img/Logo_PurpleBlackLetters_Small.png')} style={styles.logo} />
                 <Text style = {styles.dimensions}> DIMENSIONS </Text>
@@ -23,6 +22,9 @@ const SideMenu = ({ navigation }) => {
             </Text>
             <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Schedule')}>
               Schedule
+            </Text>
+            <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Maps')}>
+              Maps
             </Text>
             <Text style={styles.sectionHeadingStyle}onPress={() => navigation.navigate('Board')}>
               Meet the Board

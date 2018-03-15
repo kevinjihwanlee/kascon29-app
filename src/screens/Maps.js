@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Dimensions } from 'react-native';
 import PinchZoomView from 'react-native-pinch-zoom-view';
 
-const ScheduleScreen = ({ navigation }) => {
+const MapsScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <Image source={require('../img/banner.png')}  style = {styles.bannerContainer} />
@@ -12,18 +12,44 @@ const ScheduleScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <Text style={styles.titleText}>
-          Schedule
+          Maps
         </Text>
         <ScrollView contentContainerStyle={styles.textContainer}>
+          <Text style = {styles.insidetitleText}>
+            Norris Center
+          </Text>
           <PinchZoomView>
-          <Image source={require('../img/schedule.png')} style = {styles.schedule}/>
+          <View style = {styles.mapContainer}>
+            <Image source={require('../img/Norris_2_Floor.jpg')} style = {styles.maps}/>
+          </View>
+          </PinchZoomView>
+          <PinchZoomView>
+          <View style = {styles.mapContainer}>
+            <Image source={require('../img/Norris_3_Floor.jpg')} style = {styles.maps}/>
+          </View>
+          </PinchZoomView>
+          <Text style = {styles.insidetitleText}>
+            Northwestern Campus
+          </Text>
+          <PinchZoomView>
+          <View style = {styles.mapContainer}>
+            <Image source={require('../img/EV_campusmap.jpeg')} style = {styles.maps}/>
+          </View>
+          </PinchZoomView>
+          <Text style = {styles.insidetitleText}>
+            Evanston
+          </Text>
+          <PinchZoomView>
+          <View style = {styles.mapContainer}>
+            <Image source={require('../img/Evanston_Map.jpeg')} resizeMode = 'cover'style = {styles.maps}/>
+          </View>
           </PinchZoomView>
         </ScrollView>
       </View>
   )
 }
 
-export default ScheduleScreen;
+export default MapsScreen;
 
 const dimensions = Dimensions.get('window');
 const imageHeight = Math.round(dimensions.width * 6 / 16);
@@ -45,16 +71,22 @@ const styles = StyleSheet.create({
   baseText: {
     fontFamily: 'Avenir',
   },
-  schedule: {
-    resizeMode: 'contain',
-    width: dimensions.width * .95,
-    height: 600,
-    top: 10,
-  },
   textContainer: {
-    alignItems: 'flex-start',
+    //alignItems: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'center',
     //margin: 15,
     justifyContent: 'center',
+  },
+  insidetitleText: {
+    fontSize: 30,
+    margin: 15,
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+    color: '#EEEEEE',
   },
   titleText: {
     fontSize: 35,
@@ -66,6 +98,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     top: '6.5%',
+  },
+  maps: {
+    flex: 1,
+    resizeMode: 'contain',
+    width: dimensions.width*.95,
+    height: 375,
+    //height: null,
+  },
+  mapContainer: {
+    flex: 1,
+    paddingBottom: 15,
+    //margin: 15,
   },
   hamburgerContainer: {
     position: 'absolute',
