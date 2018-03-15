@@ -15,18 +15,38 @@ const SponsorsScreen = ({ navigation }) => {
         </Text>
         {/* put your own code after this */}
         <ScrollView contentContainerStyle={styles.textContainer}>
-          <Text style={styles.insidetitleText}>
-            GOLD
-          </Text>
+          <View style = {styles.introTextContainer}>
+            <Text style = {styles.introText}>
+              We'd like to extend a huge thank you to all our generous sponsors. KASCON29: Dimensions would not have been possible without them.
+            </Text>
+          </View>
           <Text style={styles.insidetitleText}>
             SILVER
           </Text>
+          <View style = {styles.sponsLogos}>
+            <Image source={require('../img/baekjeong_logo.jpg')} style = {styles.baekjeongLogo}/>
+          </View>
           <Text style={styles.insidetitleText}>
             BRONZE
           </Text>
+          <View style = {styles.sponsLogos}>
+            <Image source={require('../img/bodyfriend_logo.png')} style = {styles.bodyfriendLogo}/>
+          </View>
+          <View style = {styles.sponsLogos}>
+            <Image source={require('../img/mapogalmaegi_logo.png')} style = {styles.baekjeongLogo}/>
+          </View>
+          <View style = {styles.sponsLogos}>
+            <Image source={require('../img/vigpartners_logo.jpeg')} style = {styles.baekjeongLogo}/>
+          </View>
           <Text style={styles.insidetitleText}>
             EXECUTIVE
           </Text>
+          <View style = {styles.sponsLogos}>
+            <Image source={require('../img/lemieux_logo.png')} style = {styles.baekjeongLogo}/>
+          </View>
+          <View style = {styles.sponsLogos}>  
+            <Image source={require('../img/sohnandko_logo.jpg')} style = {styles.baekjeongLogo}/>
+          </View>
       </ScrollView>
       </View>
   )
@@ -51,8 +71,38 @@ const styles = StyleSheet.create({
     width: '110%',
     height: imageHeight - 20,
   },
+  sponsLogos: {
+    paddingBottom: 10,
+  },
   baseText: {
     fontFamily: 'Avenir',
+  },
+  introText: {
+    fontSize: 20,
+    fontFamily: 'Avenir',
+    fontWeight: 'normal',
+    color: '#EEEEEE',
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+  introTextContainer: {
+    borderBottomColor: '#EEEEEE',
+    borderBottomWidth: 1,
+    marginTop: 10,
+   // marginBottom: 15,
+    paddingBottom: 15,
+    marginLeft: 15,
+    marginRight: 15,
+  },
+  baekjeongLogo: {
+    resizeMode: 'cover',
+    width: 200,
+    height: 100,
+  },
+  bodyfriendLogo: {
+    resizeMode: 'cover',
+    width: 200,
+    height: 70,
   },
   titleText: {
     fontSize: 35,
@@ -68,6 +118,7 @@ const styles = StyleSheet.create({
   textContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
   },
   insidetitleText: {
     fontSize: 30,
