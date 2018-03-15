@@ -13,7 +13,9 @@ const ScheduleScreen = ({ navigation }) => {
         <Text style={styles.titleText}>
           Schedule
         </Text>
-        {/* put your own code after this */}
+        <ScrollView contentContainerStyle={styles.textContainer}>
+          <Image source={require('../img/Schedule.jpg')} style = {styles.schedule}/>
+        </ScrollView>
       </View>
   )
 }
@@ -29,6 +31,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#240A40',
       alignItems: 'center',
+      justifyContent: 'center',
     },
     bannerContainer: {
       resizeMode: 'cover',
@@ -38,6 +41,15 @@ const styles = StyleSheet.create({
     },
   baseText: {
     fontFamily: 'Avenir',
+  },
+  schedule: {
+    resizeMode: 'cover',
+    width: 350,
+  },
+  textContainer: {
+    alignItems: 'flex-start',
+    margin: 15,
+    justifyContent: 'center',
   },
   titleText: {
     fontSize: 35,
